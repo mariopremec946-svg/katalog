@@ -1,0 +1,230 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --border-color: #334155;
+    --highlight-border: #f59e0b;
+    --highlight-bg: rgba(245, 158, 11, 0.05);
+    --dimmed-opacity: 0.55;
+    --dimmed-bg: #111827;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.counter-badge {
+    display: inline-block;
+    background-color: var(--border-color);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+/* Mrežni raspored (Grid) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Osnovni stil kartice */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #34d399;
+    margin-bottom: 1.25rem;
+    margin-top: auto;
+}
+
+.card-link {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: #0f172a;
+    font-weight: 600;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.card-link:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Posebne klase za stanja (dodijeljene preko classList) */
+.card.istaknuto {
+    border: 2px solid var(--highlight-border);
+    background-color: var(--highlight-bg);
+}
+
+.card.istaknuto::before {
+    content: "⭐ TOP IZBOR";
+    display: block;
+    background-color: var(--highlight-border);
+    color: #0f172a;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-align: center;
+    padding: 0.2rem 0;
+    letter-spacing: 0.05em;
+}
+
+.card.zasivljeno {
+    opacity: var(--dimmed-opacity);
+    background-color: var(--dimmed-bg);
+    border-style: dashed;
+}
+
+.card.zasivljeno .card-price {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+/* Prazno stanje */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--card-bg);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.empty-state.hidden {
+    display: none;
+}
+
+.empty-state svg {
+    stroke: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+}
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    background-color: #0b1120;
+}

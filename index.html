@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Računalnih Komponenti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Katalog Računalnih Komponenti</h1>
+            <p class="subtitle">Pregled vrhunskog hardvera i perifernih uređaja</p>
+            <div class="counter-badge">
+                Prikazanih zapisa: <span id="brojac-zapisa">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Poruka o praznom stanju -->
+        <div id="prazno-stanje" class="empty-state hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <h2>Nema pronađenih zapisa</h2>
+            <p>Trenutno nema dostupnih komponenti koje odgovaraju zadanim kriterijima.</p>
+        </div>
+
+        <!-- Spremnik za kartice -->
+        <section id="katalog-spremnik" class="grid-container">
+            <!-- Sadržaj se dinamički ugrađuje isključivo putem JavaScripta -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026. Katalog Računalnih Komponenti. Sva prava pridržana.</p>
+    </footer>
+</body>
+</html>
