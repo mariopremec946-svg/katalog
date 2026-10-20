@@ -1,4 +1,3 @@
-// Polje s 8 zapisa računalnih komponenti
 export const komponenteZapisi = [
     {
         id: "gpu-01",
@@ -66,12 +65,12 @@ export const komponenteZapisi = [
     }
 ];
 
-// Funkcija za filtriranje zapisa po kategoriji
+
 export function filtrirajPoKategoriji(zapisi, kategorija) {
     return zapisi.filter(zapis => zapis.kategorija === kategorija);
 }
 
-// Funkcija za sortiranje popisa po brojčanoj vrijednosti (uzlazno ili silazno) ili nazivu
+
 export function sortirajZapise(zapisi, kriterij = 'vrijednost', smjer = 'silazno') {
     return [...zapisi].sort((a, b) => {
         let rezultat = 0;

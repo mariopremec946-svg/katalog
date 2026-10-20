@@ -71,14 +71,14 @@ body {
     flex: 1;
 }
 
-/* Mrežni raspored (Grid) */
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-/* Osnovni stil kartice */
+
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -162,7 +162,7 @@ body {
     background-color: var(--accent-hover);
 }
 
-/* Posebne klase za stanja (dodijeljene preko classList) */
+
 .card.istaknuto {
     border: 2px solid var(--highlight-border);
     background-color: var(--highlight-bg);
@@ -191,7 +191,6 @@ body {
     text-decoration: line-through;
 }
 
-/* Prazno stanje */
 .empty-state {
     text-align: center;
     padding: 4rem 2rem;
